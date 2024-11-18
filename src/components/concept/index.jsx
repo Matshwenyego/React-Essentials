@@ -1,3 +1,4 @@
+import "./index.css";
 import PropTypes from 'prop-types';
 
 function CoreConcept({ image, title, description }) {

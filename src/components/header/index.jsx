@@ -1,3 +1,4 @@
+import "./index.css";
 import image from "../../assets/react-core-concepts.png";
 
 const desciptions = ["Fundamental", "Crucial", "Core"];
