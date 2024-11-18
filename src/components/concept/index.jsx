@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+import "./index.css";
+import PropTypes from "prop-types";
 
 function CoreConcept({ image, title, description }) {
   return (
@@ -11,9 +12,9 @@ function CoreConcept({ image, title, description }) {
 }
 
 CoreConcept.propTypes = {
-    image: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
-  }
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 export default CoreConcept;
