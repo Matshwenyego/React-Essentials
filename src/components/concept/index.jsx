@@ -1,7 +1,7 @@
 import "./index.css";
 import PropTypes from "prop-types";
 
-function CoreConcept({ image, title, description }) {
+function Concept({ image, title, description }) {
   return (
     <li>
       <img src={image} alt={title} />
@@ -11,10 +11,10 @@ function CoreConcept({ image, title, description }) {
   );
 }
 
-CoreConcept.propTypes = {
+Concept.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
 
-export default CoreConcept;
+export default Concept;
