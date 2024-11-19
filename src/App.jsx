@@ -2,14 +2,17 @@ import { useState } from "react";
 import Header from "./components/header";
 import CoreConcept from "./components/concept";
 import Button from "./components/button";
+import Tab from "./components/tab";
 
-import { CORE_CONCEPTS } from "./data";
+import { CORE_CONCEPTS, EXAMPLES } from "./data";
+
+const topics = ["Components", "JSX", "Props", "State"];
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("Please click a button");
+  const [content, setContent] = useState(undefined);
 
   function handleSelect(text) {
-    setSelectedTopic(text);
+    setContent(EXAMPLES[text]);
   }
 
   return (
@@ -27,12 +30,17 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <Button onSelect={handleSelect}>Components</Button>
-            <Button onSelect={handleSelect}>JSX</Button>
-            <Button onSelect={handleSelect}>Props</Button>
-            <Button onSelect={handleSelect}>State</Button>
+            {topics.map((item, index) => (
+              <Button
+                active={content && content.title === item}
+                key={index}
+                onSelect={handleSelect}
+              >
+                {item}
+              </Button>
+            ))}
           </menu>
-          {selectedTopic}
+          {!content ? <p>Please select a topic.</p> : <Tab {...content} />}
         </section>
       </main>
     </div>
