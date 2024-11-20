@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../button";
 import Tab from "../tab";
+import Section from '../section';
 
 import { EXAMPLES } from "../../data";
 
@@ -14,8 +15,7 @@ function Examples() {
   }
 
   return (
-    <section id="examples">
-      <h2>Examples</h2>
+    <Section header="Examples" id="examples">
       <menu>
         {topics.map((item, index) => (
           <Button
@@ -28,7 +28,7 @@ function Examples() {
         ))}
       </menu>
       {!content ? <p>Please select a topic.</p> : <Tab {...content} />}
-    </section>
+    </Section>
   );
 }
 
